@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ERP</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="navbar-left">
+      <h1 class="navbar-title">홍콩반점 가좌점</h1>
+    </div>
+
+    <div class="navbar-right">
+        <div class="search-container">
+            <input type="text" id="searchBox" class="search-box" placeholder="검색..." style="display: none;">
+            <button class="search-btn" onclick="toggleSearch()">🔍</button>
+          </div>
+      <a href="/account" class="header-link">계정 관리</a>
+
+      
+
+      <a href="/mail" class="header-link">메일</a>
+      <a href="/logout" class="header-link">로그아웃</a>
+    </div>
+  </header>
+
+  <main class="launchpad-container">
+    <!-- 공지사항 -->
+    <div class="partition">
+      <h2>공지사항</h2>
+      <div class="group">
+          <h3>본사 공지사항</h3>
+          <p>공지사항 내용</p>
+          <p>공지사항 내용</p>
+          <p>공지사항 내용</p>
+          <h3>지사 공지사항</h3>
+          <p>공지사항 내용</p>
+          <p>공지사항 내용</p>
+          <p>공지사항 내용</p>
+    </div>
+    </div>
+
+    <!-- 자재 관리 파티션 -->
+    <div class="partition">
+        <h2>자재 관리</h2>
+        <div class="group">
+          <div class="tile" onclick="location.href='/orders'">
+            <h3>발주</h3>
+            <p>발주 요청 및 내역 관리</p>
+          </div>
+          <div class="tile" onclick="location.href='/orders'">
+            <h3>재고</h3>
+            <p>재고 관리</p>
+          </div>
+          <div class="tile" onclick="location.href='/orders'">
+            <h3>물품</h3>
+            <p>물품 관리</p>
+          </div>
+        </div>
+      </div>
+
+    <!-- 재무 파티션 -->
+    <div class="partition">
+      <h2>재무</h2>
+      <div class="group">
+        <div class="tile" onclick="location.href='/expenses'">
+          <h3>관리비</h3>
+          <p>임대비, 유지비 관리</p>
+        </div>
+        <div class="tile" onclick="location.href='/sales'">
+          <h3>매출</h3>
+          <p>매출 현황 및 분석</p>
+        </div>
+        <div class="tile" onclick="location.href='/hr'">
+          <h3>인사관리</h3>
+          <p>직원 정보 및 급여 관리</p>
+        </div>
+        <div class="tile" onclick="location.href='/expenses'">
+            <h3>손익</h3>
+            <p>손익 관리 및 추세</p>
+          </div>
+      </div>
+    </div>
+
+    <!-- 기타 파티션 -->
+    <div class="partition">
+      <h2>고객 관리</h2>
+      <div class="group">
+        <div class="tile" onclick="location.href='/orders'">
+          <h3>배달</h3>
+          <p>배달비 및 배달 내역</p>
+        </div>
+        <div class="tile" onclick="location.href='/rating'">
+          <h3>평점</h3>
+          <p>고객 리뷰 및 평가</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // 검색창 토글 함수
+    function toggleSearch() {
+      const searchBox = document.getElementById("searchBox");
+      if (searchBox.style.display === "none" || searchBox.style.display === "") {
+        searchBox.style.display = "block";
+      } else {
+        searchBox.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
