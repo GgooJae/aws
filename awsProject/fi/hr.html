@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>인사 관리 페이지</title>
+  <link rel="stylesheet" href="hr.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-left">
+          <a href="../dashboard.html" class="header-link">홈</a>
+          <h1 class="navbar-title">홍콩반점 가좌점 발주 시스템</h1>
+        </div>
+        <div class="navbar-right">
+          <div class="search-container">
+            <input type="text" id="searchBox" class="search-box" placeholder="검색..." style="display: none;">
+            <button class="search-btn" onclick="toggleSearch()">🔍</button>
+          </div>
+          <a href="/account" class="header-link">계정 관리</a>
+          <a href="/mail" class="header-link">메일</a>
+          <a href="index.html" class="header-link">로그아웃</a>
+        </div>
+      </header>
+    <br>
+  <main class="expense-container">
+    <!-- 필터링과 검색 -->
+    <div class="filter-container">
+      <label for="search-name">이름 검색:</label>
+      <input type="text" id="search-name" placeholder="이름을 입력하세요" class="search-box">
+      <label for="search-department">직급 검색:</label>
+      <select id="search-department">
+        <option value="">직급 선택</option>
+        <option value="Manager">매니저</option>
+        <option value="Engineer">엔지니어</option>
+        <option value="Staff">직원</option>
+      </select>
+    </div>
+
+    <!-- 인사 관리 테이블 -->
+    <div class="expense-table-container">
+      <table class="expense-table">
+        <thead>
+          <tr>
+            <th>사원 번호</th>
+            <th>직급</th>
+            <th>이름</th>
+            <th>성별</th>
+            <th>나이</th>
+            <th>근무개월수</th>
+            <th>월급</th>
+          </tr>
+        </thead>
+        <tbody id="employee-list">
+          <!-- 동적으로 추가될 데이터 -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="hr.js"></script>
+</body>
+</html>

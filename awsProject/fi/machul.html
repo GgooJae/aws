@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>매출 관리 - ERP</title>
+  <link rel="stylesheet" href="machul.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-left">
+      <a href="../dashboard.html" class="header-link">홈</a>
+      <h1 class="navbar-title">홍콩반점 가좌점 발주 시스템</h1>
+    </div>
+    <div class="navbar-right">
+      <div class="search-container">
+        <input type="text" id="searchBox" class="search-box" placeholder="검색..." style="display: none;">
+        <button class="search-btn" onclick="toggleSearch()">🔍</button>
+      </div>
+      <a href="/account" class="header-link">계정 관리</a>
+      <a href="/mail" class="header-link">메일</a>
+      <a href="index.html" class="header-link">로그아웃</a>
+    </div>
+  </header>
+
+  <main class="sales-container">
+    <div class="filter-container">
+      <h2>매출 관리</h2>
+      <label for="monthSelect">월 선택:</label>
+      <select id="monthSelect" onchange="filterSales()">
+        <option value="">전체</option>
+        <option value="1">1월</option>
+        <option value="2">2월</option>
+        <option value="3">3월</option>
+        <option value="4">4월</option>
+        <option value="5">5월</option>
+        <option value="6">6월</option>
+        <option value="7">7월</option>
+        <option value="8">8월</option>
+        <option value="9">9월</option>
+        <option value="10">10월</option>
+        <option value="11">11월</option>
+        <option value="12">12월</option>
+      </select>
+
+      <label for="paymentSelect">결제방식 선택:</label>
+      <select id="paymentSelect" onchange="filterSales()">
+        <option value="">전체</option>
+        <option value="카드">카드</option>
+        <option value="현금">현금</option>
+      </select>
+    </div>
+    <br>
+
+    <div class="sales-table-container">
+      <h3>매출 내역</h3>
+      <table class="sales-table">
+        <thead>
+          <tr>
+            <th>날짜</th>
+            <th>시간</th>
+            <th>메뉴</th>
+            <th>가격</th>
+            <th>갯수</th>
+            <th>총 매출</th>
+            <th>홀/배달</th>
+            <th>결제방식</th>
+          </tr>
+        </thead>
+        <tbody id="salesTable">
+          <!-- 동적으로 데이터가 추가될 예정 -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script>
+    // 예시 매출 데이터
+    const salesData = [
+      { date: "2024-11-01", time: "12:30", menu: "짜장면", price: "6,000원", quantity: 2, total: "12,000원", delivery: "홀", payment: "카드", month: "11" },
+      { date: "2024-11-01", time: "14:00", menu: "짬뽕", price: "7,000원", quantity: 1, total: "7,000원", delivery: "배달", payment: "현금", month: "11" },
+      { date: "2024-10-15", time: "18:00", menu: "탕수육", price: "15,000원", quantity: 1, total: "15,000원", delivery: "홀", payment: "카드", month: "10" },
+      { date: "2024-11-02", time: "13:15", menu: "볶음밥", price: "5,000원", quantity: 3, total: "15,000원", delivery: "배달", payment: "현금", month: "11" }
+    ];
+
+    // 월별 및 결제방식 필터링
+    function filterSales() {
+      const monthSelect = document.getElementById("monthSelect").value;
+      const paymentSelect = document.getElementById("paymentSelect").value;
+      const tbody = document.getElementById("salesTable");
+
+      // 필터링된 데이터 배열을 만듬
+      const filteredData = salesData.filter(item => {
+        const matchMonth = (monthSelect === "" || item.month === monthSelect);
+        const matchPayment = (paymentSelect === "" || item.payment === paymentSelect);
+        return matchMonth && matchPayment;
+      });
+
+      // 기존 테이블 내용 삭제
+      tbody.innerHTML = "";
+
+      // 필터링된 데이터로 테이블 내용 추가
+      filteredData.forEach(item => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${item.date}</td>
+          <td>${item.time}</td>
+          <td>${item.menu}</td>
+          <td>${item.price}</td>
+          <td>${item.quantity}</td>
+          <td>${item.total}</td>
+          <td>${item.delivery}</td>
+          <td>${item.payment}</td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    // 페이지 로드 시 모든 데이터를 출력
+    window.onload = filterSales;
+  </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>재고 관리 - ERP</title>
+  <link rel="stylesheet" href="jaje.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="navbar-left">
+          <a href="../dashboard.html" class="header-link">홈</a>
+          <h1 class="navbar-title">홍콩반점 가좌점</h1>
+        </div>
+    
+        <div class="navbar-right">
+    
+            <div class="search-container">
+                <input type="text" id="searchBox" class="search-box" placeholder="검색..." style="display: none;">
+                <button class="search-btn" onclick="toggleSearch()">🔍</button>
+            </div>
+    
+          <a href="/account" class="header-link">계정 관리</a>
+          <a href="/mail" class="header-link">메일</a>
+          <a href="index.html" class="header-link">로그아웃</a>
+        </div>
+      </header>
+
+  <main class="launchpad-container">
+    <!-- 재고 목록 -->
+    <div class="partition">
+      <h2>재고 목록</h2>
+      <table class="inventory-table">
+        <thead>
+          <tr>
+            <th>자재명</th>
+            <th>수량</th>
+            <th>입고일</th>
+            <th>상태</th>
+            <th>수정/삭제</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>쌀</td>
+            <td>100kg</td>
+            <td>2024-11-01</td>
+            <td>정상</td>
+            <td>
+              <button class="btn">수정</button>
+              <button class="btn">삭제</button>
+            </td>
+          </tr>
+          <tr>
+            <td>고기</td>
+            <td>50kg</td>
+            <td>2024-11-10</td>
+            <td>정상</td>
+            <td>
+              <button class="btn">수정</button>
+              <button class="btn">삭제</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script>
+    // 검색창 토글 함수
+    function toggleSearch() {
+      const searchBox = document.getElementById("searchBox");
+      if (searchBox.style.display === "none" || searchBox.style.display === "") {
+        searchBox.style.display = "block";
+      } else {
+        searchBox.style.display = "none";
+      }
+    }
+
+    // 재고 추가 폼 처리 (일시적인 처리)
+    document.querySelector('.inventory-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('새로운 재고가 추가되었습니다!');
+    });
+  </script>
+</body>
+</html>

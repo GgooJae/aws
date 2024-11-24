@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>고객 리뷰 및 평가</title>
+  <link rel="stylesheet" href="pungjum.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-left">
+          <a href="../dashboard.html" class="header-link">홈</a>
+          <h1 class="navbar-title">홍콩반점 가좌점</h1>
+        </div>
+    
+        <div class="navbar-right">
+    
+            <div class="search-container">
+                <input type="text" id="searchBox" class="search-box" placeholder="검색..." style="display: none;">
+                <button class="search-btn" onclick="toggleSearch()">🔍</button>
+            </div>
+    
+          <a href="/account" class="header-link">계정 관리</a>
+          <a href="/mail" class="header-link">메일</a>
+          <a href="index.html" class="header-link">로그아웃</a>
+        </div>
+      </header>
+
+  <main class="content-container">
+
+    <!-- 리뷰 목록 테이블 -->
+    <div class="reviews-container">
+      <h2>리뷰 목록</h2>
+      <table class="reviews-table">
+        <thead>
+          <tr>
+            <th>날짜</th>
+            <th>고객 ID</th>
+            <th>평점</th>
+            <th>코멘트</th>
+          </tr>
+        </thead>
+        <tbody id="reviews-table-body">
+          <!-- 동적으로 리뷰 목록 추가됨 -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="pungjum.js"></script>
+</body>
+</html>
