@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>홍콩반점 자재 발주 ERP</title>
+  <link rel="stylesheet" href="jaje.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-left">
+           <a href="../dashboard.html" class="header-link">홈</a>
+          <h1 class="navbar-title">홍콩반점 가좌점 발주 시스템</h1>
+        </div>
+    
+        <div class="navbar-right">
+            <div class="search-container">
+                <input type="text" id="searchBox" class="search-box" placeholder="검색..." style="display: none;">
+                <button class="search-btn" onclick="toggleSearch()">🔍</button>
+              </div>
+          <a href="/account" class="header-link">계정 관리</a>
+          <a href="/mail" class="header-link">메일</a>
+          <a href="index.html" class="header-link">로그아웃</a>
+        </div>
+  </header>
+
+  <div class="container">
+    <!-- 대시보드 -->
+    <div class="dashboard">
+      <h2>대시보드</h2>
+      <div class="card">
+        <h3>오늘의 발주 현황</h3>
+        <p>진행 중: 5건</p>
+        <p>완료: 3건</p>
+        <p>미처리: 2건</p>
+        <a href="#" class="btn">자세히 보기</a>
+      </div>
+
+    <!-- 자재 목록 -->
+    <div class="material-list">
+      <h2>자재 목록</h2>
+      <input type="text" id="search" placeholder="자재 검색...">
+      <table>
+        <thead>
+          <tr>
+            <th>자재명</th>
+            <th>카테고리</th>
+            <th>발주</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>쌀</td>
+            <td>주요 자재</td>
+            <td><a href="#" class="btn">발주</a></td>
+          </tr>
+          <tr>
+            <td>고기</td>
+            <td>주요 자재</td>
+            <td><a href="#" class="btn">발주</a></td>
+          </tr>
+          <tr>
+            <td>야채</td>
+            <td>부재료</td>
+            <td><a href="#" class="btn">발주</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 발주 관리 -->
+    <div class="order-management">
+      <h2>발주 관리</h2>
+      <input type="text" id="search" placeholder="자재 검색...">
+      <table>
+        <thead>
+          <tr>
+            <th>발주 ID</th>
+            <th>자재명</th>
+            <th>수량</th>
+            <th>상태</th>
+            <th>날짜</th>
+            <th>완료</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>쌀</td>
+            <td>20kg</td>
+            <td>진행 중</td>
+            <td>2024-11-23</td>
+            <td><a href="#" class="btn">완료</a></td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>고기</td>
+            <td>15kg</td>
+            <td>완료</td>   
+            <td>2024-11-22</td>
+            <td><a href="#" class="btn">완료</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+</body>
+</html>

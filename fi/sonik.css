@@ -1,0 +1,126 @@
+/* 전체 스타일 */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+  }
+  
+  /* 네비게이션 바 스타일 */
+  /* 헤더 스타일 */
+.navbar {
+    background-color: #007faa;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 헤더 내 왼쪽 부분 (타이틀) */
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-title {
+    margin: 0;
+    font-size: 1.5rem;
+    color: white;
+  }
+  
+  /* 헤더 내 오른쪽 부분 (계정 관리, 검색 아이콘, 메일, 로그아웃) */
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 각 요소 간 간격 */
+  }
+  
+  .header-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .header-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* 검색창과 검색 아이콘 스타일 */
+  .search-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .search-box {
+    padding: 8px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    display: none; /* 기본적으로 숨김 */
+  }
+  
+  .search-btn {
+    background-color: #007faa;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  .search-btn:hover {
+    background-color: #005f8d;
+  }
+  
+  /* 페이지 레이아웃 */
+  .content-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* 손익 테이블 */
+  .table-container {
+    margin-bottom: 40px;
+  }
+  
+  .profit-loss-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profit-loss-table th, .profit-loss-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  .profit-loss-table th {
+    background-color: #007faa;
+    color: white;
+  }
+  
+  .profit-loss-table td {
+    background-color: #fafafa;
+  }
+  
+  .profit-loss-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* 그래프 컨테이너 */
+  .chart-container {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
